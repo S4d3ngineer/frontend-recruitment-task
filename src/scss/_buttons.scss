@@ -1,6 +1,7 @@
 @use 'colors';
 
 .btn, ::slotted(.btn) {
+  font-weight: 700;
   padding: 16px 40px;
   gap: 10px;
   border: none;
@@ -10,5 +11,12 @@
 
 .btn--primary, ::slotted(.btn--primary) {
   background: colors.$primary;
-  color: white;
+  color: colors.$light;
+}
+
+.btn--reset {
+  padding: 8px 20px;
+  margin-top: 10px;
+  background-color: colors.$warning;
+  color: colors.$light;
 }
