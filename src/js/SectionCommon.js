@@ -26,7 +26,6 @@
       paragraph?.classList.add("paragraph");
 
       const button = this.querySelector("button");
-      console.log(button);
       button?.classList.add("btn", "btn--primary", "container-common__button");
     }
 
