@@ -17,7 +17,6 @@ openPopupButtons.forEach((button, index) => {
       sessionStorage.setItem("clickCount" + index, currentClickCount);
     }
     currentClickCount ++;
-    console.log(currentClickCount);
     sessionStorage.setItem("clickCount" + index, currentClickCount);
     const popup = new Popup(currentClickCount);
     const body = document.querySelector("body");
@@ -34,3 +33,7 @@ openPopupButtons.forEach((button, index) => {
 // function handlePopupClose() {
 
 // }
+
+// document.addEventListener("click", (e) => {
+//   console.log(e.target);
+// }) 

@@ -28,7 +28,7 @@
       const button = this.querySelector("button");
       button?.classList.add("btn", "btn--primary", "container-common__button");
     }
-
+      
 }
 
 customElements.define('section-common', SectionCommon);

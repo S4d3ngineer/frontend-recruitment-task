@@ -12,25 +12,40 @@ export default class PopupWindow extends HTMLElement {
       </div>
       <button class="close-button" aria-label="close-button">&times;</button>
     </div>
-    <div id="overlay"></div>
     `
   }
 
-  handleRemovePopup = () => {
+  handleDeleteButtonClick = () => {
     this.remove();
   }
 
-  
+  handleOutsidePopupClick = (e) => {
+    if (e.target !== this) {
+      this.remove();
+    }
+  }
 
 
   connectedCallback() {
-  //   // const title = this.querySelector("h1"); // TODO
-  //   // const msg = this.querySelector("p"); // TODO
+    // const title = this.querySelector("h1"); // TODO
+    // const msg = this.querySelector("p"); // TODO
+    // const overlay = document.createElement("div");
+    // overlay.classList.add("active");
+    // overlay.id = "overlay"; 
+    // const body = document.querySelector("body");
+    // body.appendChild(overlay); 
+
     const closeButon = this.shadowRoot.querySelector(".close-button");
-    const overlay = this.shadowRoot.querySelector("#overlay");
-    console.log(overlay);
-    closeButon.addEventListener("click", this.handleRemovePopup);
-    overlay.addEventListener("click", this.handleRemovePopup);
+    const overlay = document.querySelector("#overlay");
+    overlay.classList.add("active");
+    closeButon.addEventListener("click", this.handleDeleteButtonClick);
+    overlay.addEventListener("click", this.handleOutsidePopupClick);
+  }
+
+  disconnectedCallback() {
+    const overlay = document.querySelector("#overlay");
+    overlay.classList.remove("active");
+    // overlay.remove();
   }
 }
 
