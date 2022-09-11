@@ -3,3 +3,8 @@
 *, *::after, *::before {
   box-sizing: border-box;
 }
+
+#temporary {
+  display: flex;
+  flex-direction: column;
+}

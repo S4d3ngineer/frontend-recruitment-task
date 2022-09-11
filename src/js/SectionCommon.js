@@ -14,7 +14,7 @@
       `
     }
 
-    connectedCallback() {
+    connectedCallback() { // TODO consider moving it to render function
       // Adding classes to the elements inserted in place of slots
       const img = this.querySelector("img");
       img?.classList.add("container-common__img");
