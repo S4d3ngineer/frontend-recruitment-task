@@ -4,8 +4,36 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>[Name] [Surname] - Recruitment task</title>
+    <title>Adam Arkuszyński - Recruitment task</title>
+    <link rel="stylesheet" href="./dist/main.css">
+    <script src="./src/js/main.js" type="module" defer></script>
 </head>
 <body>
-
+  <!-- <template id="section-common">
+    <style>@import "./dist/section-common.css";</style>
+    <div class="container-common">
+      <slot name="image"><img class="container-common__img"></slot>
+      <!-- <img class="container-common__img" src="/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_784.jpg"> -->
+      <!-- <div class="container-common__content">
+        <h1 slot="heading" class="heading">Lorem Ipsum</h1>
+        <p slot="paragraph" class="paragraph">
+          Infinitely scalable, feature-rich and cloud-native data management and protection 
+          for modern and legacy infrastructures and SaaS platforms,
+          managed via a single app with no hardware required.
+        </p>
+        <button class="btn-primary container-common__button">Button</button>
+      </div>
+  </template> -->
+  <section-common>
+    <img slot="image" src="/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_784.jpg">
+    <h1 slot="heading">Lorem Ipsum</h1> 
+    <p slot="paragraph">
+      Infinitely scalable, feature-rich and cloud-native data management and protection 
+      for modern and legacy infrastructures and SaaS platforms,
+      managed via a single app with no hardware required.
+    </p>
+    <button slot="button">Button</button>
+  </section-common>
+  </div>
 </body>
+

@@ -1,0 +1,44 @@
+@use 'buttons';
+
+// TODO 
+@mixin img($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+.container-common {
+  position: relative;
+  width: 1440px;
+}
+
+.container-common__img, ::slotted(.container-common__img) {
+  position: absolute;
+  top: 96px;
+  left: 230px;
+  @include img($width: 505px, $height: 330px);
+}
+
+ .container-common__content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 136px;
+  left: 830px;
+  width: 380px; // TODO ?
+}
+
+.container-common__button, ::slotted(.container-common__button) {
+  align-self: flex-start;
+}
+
+.heading, ::slotted(.heading) {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 50.4px;
+}
+
+.paragraph, ::slotted(.paragraph) {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+}

@@ -1,0 +1,13 @@
+@use 'colors';
+
+.btn, ::slotted(.btn) {
+  padding: 16px 40px;
+  gap: 10px;
+  border: none;
+  border-radius: 32px;
+}
+
+.btn--primary, ::slotted(.btn--primary) {
+  background: colors.$primary;
+  color: white;
+}
