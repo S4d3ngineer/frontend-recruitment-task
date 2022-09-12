@@ -10,7 +10,7 @@
   z-index: 10;
   border: none;
   background: #ffffff;
-  width: 920px; // TODO change to max-width
+  max-width: 920px; // TODO change to max-width
 }
 
 .popup__content {
@@ -40,4 +40,57 @@
   cursor: pointer;
   border: none;
   background: none;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.loader::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border: 7px solid #dddddd;
+  border-top-color: colors.$primary;
+  border-radius: 50%;
+  // animation: name duration timing-function iteration-count
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  from { transform: rotate(0turn) }
+  to { transform: rotate(1turn) }
+}
+
+table {
+  // table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid colors.$dark;
+  margin-top: 10px;
+  // thead {
+  //   th:nth-child(1) {
+  //     width: 20%;
+  //   }
+  //   th:nth-child(2) {
+  //     width: 25%;
+  //   }
+  //   th:nth-child(3) {
+  //     width: 20%;
+  //   }
+  //   th:nth-child(4) {
+  //     width: 15%;
+  //   }
+  //   th:nth-child(5) {
+  //     width: 20%;
+  //   }
+  // }
+  th, td {
+    text-align: left;
+    padding: 5px;
+    border: 2px solid colors.$dark;
+  }
 }

@@ -16,8 +16,17 @@ openPopupButtons.forEach((button, index) => {
     const handleResetClickCounter = () => {
       sessionStorage.setItem("clickCount" + index, 0);
     }
-    const popup = new Popup(currentClickCount, handleResetClickCounter);
+    const popup = new Popup(
+      currentClickCount,
+      handleResetClickCounter,
+      getEndpointData
+      );
     const body = document.querySelector("body");
   body.appendChild(popup);  
   })
 })
+
+const getEndpointData = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  return response.json();
+}
