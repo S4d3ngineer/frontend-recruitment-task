@@ -10,13 +10,11 @@
   z-index: 10;
   border: none;
   background: #ffffff;
-  max-width: 920px; // TODO change to max-width
+  max-width: 920px;
 }
 
 .popup__content {
   padding: 56px 95px;
-  // display: flex;
-  // align-items: center;
 }
 
 .popup__title {
@@ -66,28 +64,11 @@
 }
 
 table {
-  // table-layout: fixed;
   width: 100%;
+  font-size: 0.75rem;
   border-collapse: collapse;
   border: 1px solid colors.$dark;
   margin-top: 10px;
-  // thead {
-  //   th:nth-child(1) {
-  //     width: 20%;
-  //   }
-  //   th:nth-child(2) {
-  //     width: 25%;
-  //   }
-  //   th:nth-child(3) {
-  //     width: 20%;
-  //   }
-  //   th:nth-child(4) {
-  //     width: 15%;
-  //   }
-  //   th:nth-child(5) {
-  //     width: 20%;
-  //   }
-  // }
   th, td {
     text-align: left;
     padding: 5px;
