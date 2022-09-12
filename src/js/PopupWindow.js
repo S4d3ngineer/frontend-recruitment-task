@@ -4,13 +4,13 @@ export default class PopupWindow extends HTMLElement {
 		this.clickCount = clickCount;
 		this.resetSessionCounter = resetSessionCounter;
 		this.getTableData = getTableData;
-		this.attachShadow({ mode: "open" });
+		// this.attachShadow({ mode: "open" });
 		this.render();
 		if (this.clickCount > 5) {
 			const resetButton = document.createElement("button");
 			resetButton.classList.add("btn", "btn--reset");
 			resetButton.innerText = "Reset";
-			const popupContent = this.shadowRoot.querySelector(".popup__content");
+			const popupContent = this.querySelector(".popup__content");
 			popupContent.appendChild(resetButton);
 			resetButton.addEventListener("click", this.handleResetClick);
 		}
@@ -22,8 +22,7 @@ export default class PopupWindow extends HTMLElement {
 	}
 
 	render = () => {
-		this.shadowRoot.innerHTML = /*html*/ `
-    <style>@import "./dist/popup-window.css";</style>
+		this.innerHTML = /*html*/ `
     <div class="popup">
       <div class="popup__content">
         <div class="popup__title">Alert!</div>
@@ -34,7 +33,7 @@ export default class PopupWindow extends HTMLElement {
     `;
 		const overlay = document.querySelector("#overlay");
 		overlay.classList.add("active");
-		const closeButon = this.shadowRoot.querySelector(".close-button");
+		const closeButon = this.querySelector(".close-button");
 		closeButon.addEventListener("click", this.handleDeleteButtonClick);
 		overlay.addEventListener("click", this.handleOutsidePopupClick);
 
@@ -43,14 +42,16 @@ export default class PopupWindow extends HTMLElement {
 
 	renderTableData = async () => {
 		const tableData = await this.getTableData();
-		const popupContent = this.shadowRoot.querySelector(".popup__content");
+		const popupContent = this.querySelector(".popup__content");
 		const loader = document.createElement("div");
 		loader.classList.add("loader");
 		popupContent.appendChild(loader);
+    
 		// seTimeout is called in order to show loader in case,
 		// data is fetched too fast for the loader to be visible long enough
 		setTimeout(() => {
 			const table = document.createElement("table");
+      table.classList.add("popup__table")
 			table.innerHTML = /*html*/ `
         <thead>
           <tr>
