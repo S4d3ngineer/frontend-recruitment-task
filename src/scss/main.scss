@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: fonts.$font-family;
+}
+
 #overlay {
   position: fixed;
   display: none;
@@ -17,7 +21,6 @@
   background: colors.$dark;
   opacity: 0.5;
   z-index: 9;
-  // pointer-events: none;
 }
 
 #overlay.active {

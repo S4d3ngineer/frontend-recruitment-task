@@ -3,6 +3,7 @@ import Popup from "./PopupWindow.js";
 
 const body = document.querySelector("body");
 
+// Append common-section element to body of index.html
 const sampleImgURL = "/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_784.jpg";
 const sampleImgAltText = "Beach Image";
 const sampleHeading = "Lorem Ipsum";

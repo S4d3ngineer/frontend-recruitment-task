@@ -4,8 +4,8 @@ export default class PopupWindow extends HTMLElement {
 		this.clickCount = clickCount;
 		this.resetSessionCounter = resetSessionCounter;
 		this.getTableData = getTableData;
-		// this.attachShadow({ mode: "open" });
 		this.render();
+    // If button's clickCount is greater than 5, render reset button
 		if (this.clickCount > 5) {
 			const resetButton = document.createElement("button");
 			resetButton.classList.add("btn", "btn--reset");
@@ -17,6 +17,7 @@ export default class PopupWindow extends HTMLElement {
 	}
 
 	disconnectedCallback() {
+    // Upon removing popup element from dom disactivate overlay
 		const overlay = document.querySelector("#overlay");
 		overlay.classList.remove("active");
 	}
@@ -39,7 +40,8 @@ export default class PopupWindow extends HTMLElement {
 
 		this.renderTableData();
 	};
-
+  
+  // Creating table element and populating it with endpoint data
 	renderTableData = async () => {
 		const tableData = await this.getTableData();
 		const popupContent = this.querySelector(".popup__content");

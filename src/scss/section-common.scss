@@ -6,14 +6,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding-top: 96px;
   flex-wrap: wrap;
   max-width: 1440px;
+  padding-top: 96px;
 }
-
-.container-common--hidden {
-  display: none;
-} // TODO
 
 .container-common__img, ::slotted(.container-common__img) {
   max-width: 100%;
