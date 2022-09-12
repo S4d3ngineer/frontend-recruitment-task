@@ -27,7 +27,7 @@ export default class PopupWindow extends HTMLElement {
     <div class="popup">
       <div class="popup__content">
         <div class="popup__title">Alert!</div>
-        <div class="popup-msg">You have clicked <b>${this.clickCount} times</b> the related button!</div>
+        <div class="popup__msg">You have clicked <b>${this.clickCount} times</b> the related button!</div>
       </div>
       <button class="popup__close-button" aria-label="close button">&times;</button>
       </div>
@@ -37,10 +37,10 @@ export default class PopupWindow extends HTMLElement {
 		const closeButon = this.querySelector(".popup__close-button");
 		closeButon.addEventListener("click", this.handleDeleteButtonClick);
 		overlay.addEventListener("click", this.handleOutsidePopupClick);
-
+    
 		this.renderTableData();
 	};
-  
+
   // Creating table element and populating it with endpoint data
 	renderTableData = async () => {
 		const tableData = await this.getTableData();
@@ -102,7 +102,12 @@ export default class PopupWindow extends HTMLElement {
 	handleResetClick = () => {
 		this.resetSessionCounter();
 		this.clickCount = 0;
-		this.render();
+    const popupMsg = this.querySelector(".popup__msg");
+    const resetButton = this.querySelector(".btn--reset");
+    popupMsg.innerHTML = /*html*/`
+      You have clicked <b>${this.clickCount} times</b> the related button!
+    `
+    resetButton.remove();
 	};
 }
 
