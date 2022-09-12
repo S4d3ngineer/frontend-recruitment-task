@@ -1,9 +1,27 @@
 import SectionCommon from "./SectionCommon.js";
 import Popup from "./PopupWindow.js";
 
-const openPopupButtons = document.querySelectorAll("[data-target=popup]");
+const body = document.querySelector("body");
 
-// Adding individual click counting for popup buttons (data is stored inside session)
+const sampleImgURL = "/images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_784.jpg";
+const sampleImgAltText = "Beach Image";
+const sampleHeading = "Lorem Ipsum";
+const sampleParagraph = `
+  Infinitely scalable, feature-rich and cloud-native data management and protection 
+  for modern and legacy infrastructures and SaaS platforms,
+  managed via a single app with no hardware required.
+`
+const sampleCommonSection = new SectionCommon(
+  sampleImgURL,
+  sampleImgAltText,
+  sampleHeading,
+  sampleParagraph
+);
+body.appendChild(sampleCommonSection);
+
+// Adding individual click-counting for popup buttons (data is stored inside session)
+const openPopupButtons = document.querySelectorAll("[data-target=popup]");
+console.log(openPopupButtons);
 openPopupButtons.forEach((button, index) => {
   button.addEventListener('click', () => {
     let currentClickCount = sessionStorage.getItem("clickCount" + index);

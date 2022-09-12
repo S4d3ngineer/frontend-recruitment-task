@@ -1,32 +1,29 @@
 @use 'fonts';
 @use 'buttons';
 
-// TODO 
-@mixin img($width, $height) {
-  width: $width;
-  height: $height;
+.container-common {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 96px;
+  flex-wrap: wrap;
+  max-width: 1440px;
 }
 
-.container-common {
-  position: relative;
-  width: 1440px;
-  height: 900px;
-}
+.container-common--hidden {
+  display: none;
+} // TODO
 
 .container-common__img, ::slotted(.container-common__img) {
-  position: absolute;
-  top: 96px;
-  left: 230px;
-  @include img($width: 505px, $height: 330px);
+  max-width: 100%;
+  width: 505px;
 }
 
  .container-common__content {
-  position: absolute;
   display: flex;
   flex-direction: column;
-  top: 136px;
-  left: 830px;
-  width: 380px; // TODO ?
+  max-width: 380px;
 }
 
 .container-common__button, ::slotted(.container-common__button) {
