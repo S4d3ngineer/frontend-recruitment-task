@@ -28,12 +28,12 @@ export default class PopupWindow extends HTMLElement {
         <div class="popup__title">Alert!</div>
         <div class="popup-msg">You have clicked <b>${this.clickCount} times</b> the related button!</div>
       </div>
-      <button class="close-button" aria-label="close-button">&times;</button>
+      <button class="popup__close-button" aria-label="close button">&times;</button>
       </div>
     `;
 		const overlay = document.querySelector("#overlay");
 		overlay.classList.add("active");
-		const closeButon = this.querySelector(".close-button");
+		const closeButon = this.querySelector(".popup__close-button");
 		closeButon.addEventListener("click", this.handleDeleteButtonClick);
 		overlay.addEventListener("click", this.handleOutsidePopupClick);
 

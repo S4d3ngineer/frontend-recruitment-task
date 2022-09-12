@@ -9,7 +9,7 @@
   transform: translate(-50%, -50%);
   z-index: 10;
   border: none;
-  background: #ffffff;
+  background: colors.$light;
   max-width: 920px;
 }
 
@@ -30,7 +30,7 @@
   line-height: 150%;
 }
 
-.close-button {
+.popup__close-button {
   position: absolute;
   top: 40px;
   right: 40px;
@@ -44,6 +44,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
   margin-bottom: 15px;
 }
 
@@ -65,7 +66,7 @@
 
 .popup__table {
   width: 100%;
-  font-size: 0.75rem;
+  font-size: clamp(0.6rem, 1vw, 0.8rem);
   border-collapse: collapse;
   border: 1px solid colors.$dark;
   margin-top: 10px;

@@ -21,7 +21,6 @@ body.appendChild(sampleCommonSection);
 
 // Adding individual click-counting for popup buttons (data is stored inside session)
 const openPopupButtons = document.querySelectorAll("[data-target=popup]");
-console.log(openPopupButtons);
 openPopupButtons.forEach((button, index) => {
   button.addEventListener('click', () => {
     let currentClickCount = sessionStorage.getItem("clickCount" + index);
