@@ -44,7 +44,7 @@
       }
     }
 
-    render = () => {
+    render() {
     this.innerHTML = /*html*/`
     <link rel="stylesheet" href="./dist/section-common.css">
     <div class="container-common">
