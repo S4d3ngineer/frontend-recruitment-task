@@ -1,3 +1,10 @@
+2. Moduł został dostosowany do wielokrotnego użycia go na stronie, poprzez napisanie go jako web component,
+któremu można ustawić treść ustawiając atrybuty, lub inicjując go Javascriptem, ustawiając treść poprzez argumenty klasy przy tworzeniu nowego obiektu.
+3. Każdy przycisk ma swój własny oddzielny licznik - wartości zapisywane są w sesji. Moduł z zadania drugiego jest zdublowany, żeby to pokazać.
+4. Zaczytywanie tabeli jest opóźnione, w celach demonstracyjnych, przez setTimeout(), żeby od razu było widać "loaderek" bez potrzeby ustawiania throttlingu w dev toolsach.
+
+---------------------------------------------------------------------------------
+
 # Zadanie rekrutacyjne GravityGlobal na frontend developera
 
 ## Informacje wstępne
