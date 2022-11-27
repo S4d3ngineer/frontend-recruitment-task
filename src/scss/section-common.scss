@@ -1,0 +1,43 @@
+@use 'fonts';
+@use 'buttons';
+
+.container-common {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 95px;
+  max-width: 1440px;
+  padding-top: 96px;
+}
+
+.container-common__img, ::slotted(.container-common__img) {
+  max-width: 100%;
+  width: 505px;
+}
+
+ .container-common__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 16px;
+  max-width: 380px;
+}
+
+.container-common__button, ::slotted(.container-common__button) {
+  align-self: flex-start;
+}
+
+.heading, ::slotted(.heading) {
+  font-weight: fonts.$heading-weight;
+  font-size: 42px;
+  line-height: 50.4px;
+  margin: 0px;
+}
+
+.paragraph, ::slotted(.paragraph) {
+  font-weight: fonts.$paragraph-weight;
+  font-size: 16px;
+  line-height: 24px;
+}
